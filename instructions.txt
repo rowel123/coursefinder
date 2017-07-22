@@ -1,0 +1,21 @@
+Set up Course Finder  : 
+
+Requirements: 
+WAMPP or XAMPP (prefferably XAMPP)
+
+
+
+Steps For Website: 
+1. Run apache and mysql on XAMPP Control Panel
+2. Copy and extract the folder on  C:/xampp/htdocs  or  C:/wampp/webapp 
+3. Go to URL bar -->  localhost/coursefinderfinal
+
+
+Steps for database setup (important):
+
+1. Run apache and mysql on XAMPP Control Panel
+2. Go to url bar --> localhost/phpmyadmin
+3. Click new on the left side to create a new database.
+4. On top menu, Click import , then click choose file.
+5. Go to C:/xampp/htdocs/coursefinderfinal on htdocs or webapp  and choose coursefinderdb.sql
+
