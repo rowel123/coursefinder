@@ -6,20 +6,20 @@
 <body id="page-top">
 
     <header>
-        <div class="header-content">
+        <div class="header-content" style="top:250px;">
             <div class="header-content-inner">
                 <h1 id="homeHeading">Courses</h1>
                 <hr>
                 <p>Learning is everything!</p>
     
-<!––  Search START  --!>
-<label for="basic-url">Search Course</label>
-<div class="input-group">
-  <span class="input-group-addon" id="basic-addon3">Courses:</span>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-<!––  Search END  --!>
 
+<label for="basic-url">Available Courses</label>
+
+<div> Bachelor Science in Computer Science  </div>
+<div> Bachelor Science in Information Technology  </div>
+<div> Bachelor Science in Business Administration  </div>
+<div> Bachelor Science in Civil Engineering  </div>
+<div> Bachelor Science in Computer Engineering  </div>
 
             </div>
         </div>
@@ -27,19 +27,7 @@
 
 
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Schools Available: </h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-       
-        </div>
-    </section>
+
 
 
     <!-- <section id="services">

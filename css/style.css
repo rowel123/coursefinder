@@ -200,3 +200,9 @@
     background-color: white;
     color: black;
 }
+
+#sticky-footer 
+{
+    position: fixed;
+    bottom: 0px;
+}

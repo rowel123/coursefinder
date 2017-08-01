@@ -110,10 +110,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Computer Technology
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    To be an IT one step closer! We offer the best schools in Zambales! 
                                 </div>
                             </div>
                         </div>
@@ -125,10 +125,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Accoutancy
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Searching for available courses was made easier!
                                 </div>
                             </div>
                         </div>
@@ -140,10 +140,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                            Photography
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                        Wanna be a photographer ? Schools are available here in Zambales!
                                 </div>
                             </div>
                         </div>
@@ -155,10 +155,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                    Cooking
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                    Want to cook dishes and bakes? Click here for more information!
                                 </div>
                             </div>
                         </div>
@@ -170,10 +170,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                   Marketing
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                   Marketing Schools are available here!
                                 </div>
                             </div>
                         </div>
@@ -185,10 +185,10 @@
                         <div class="portfolio-box-caption">
                             <div class="portfolio-box-caption-content">
                                 <div class="project-category text-faded">
-                                    Category
+                                  Engineering
                                 </div>
                                 <div class="project-name">
-                                    Project Name
+                                  Hi Ho Silver! 
                                 </div>
                             </div>
                         </div>

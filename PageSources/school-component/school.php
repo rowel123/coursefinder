@@ -6,7 +6,37 @@
 <body id="page-top">
 
     <header>
-        <div class="header-content">
+     <style type="text/css">
+        .schoolBox{
+
+            height: 100px;
+            margin: 15px;
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            -webkit-box-shadow: 1px 1px 10px 10px #9C9C9C;
+            box-shadow: 1px 1px 5px 5px #9C9C9C;
+            padding-top:15px;
+        }
+        .searchText{
+            margin-bottom:100px;
+        }
+        .awesomeButton{
+  -webkit-border-radius: 2;
+  -moz-border-radius: 2;
+  border-radius: 2px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 20px;
+background-color:rgba(0, 0, 0, .03);
+  padding: 1px 5px 1px 5px;
+  text-decoration: none;
+        }
+        .awesomeButton:hover{
+background-color:rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+        }
+     </style>
+        <div class="header-content" style="top:250px;">
             <div class="header-content-inner">
                 <h1 id="homeHeading">Schools</h1>
                 <hr>
@@ -14,105 +44,65 @@
     
 <!––  Search START  --!>
 <label for="basic-url">Search Schools</label>
-<div class="input-group">
+<div class="input-group" >
   <span class="input-group-addon" id="basic-addon3">Schools:</span>
   <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
 </div>
+</div class="searchText">
+ <div  style="width:100%;">
+
 <!––  Search END  --!>
 
+            <?php
+$con=mysqli_connect("localhost","root","","coursefinderdb");
 
+
+$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
+while($row = mysqli_fetch_array($fetchSchools)) {
+
+//        echo "<tr>
+//                 <td> " . $row['name'] . "</td>
+//                 <td> " . $row['address'] . "</td>
+//                 <td> " . $row['phone'] . "</td>             
+//               </tr>";
+       
+    
+  ?>
+
+
+
+
+      <div class="col-md-2 schoolBox"> <?php echo $row['name'] ?>  <br>
+       <div class="input-group-btn">
+                <button type="button" 
+                        class="awesomeButton" 
+                        data-toggle="dropdown">Courses  Available<span class="caret"></span></button>
+                <ul class="dropdown-menu">
+                 <?php $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses where school_id=$row[school_id]"); 
+                        while($row2 = mysqli_fetch_array($fetchCourses)) {
+                     ?>
+                    <li><a href="#"> <?php echo $row2['name'] . " " . $row2['name_alias']; ?> </a></li>
+                
+     
+                    <?php  } ?>
+                </ul>
             </div>
+     </div>     
+
+
+</div>
+
+<?php    
+       }
+mysqli_close($con);
+?>
         </div>
+
+
     </header>
 
 
 
-    <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Schools Available: </h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-    <table class="table">
-            <thead>
-              <tr>
-                <th>School</th>
-                <th>Address</th>
-                <th>Tel. No</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php
-$con=mysqli_connect("localhost","root","","coursefinderdb");
-
-// Perform queries 
-$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
-while($row = mysqli_fetch_array($fetchSchools)) {
-
-       echo "<tr>
-                <td> " . $row['name'] . "</td>
-                <td> " . $row['address'] . "</td>
-                <td> " . $row['phone'] . "</td>             
-              </tr>";
-       
-    }
-mysqli_close($con);
-?>
-
-             
-            </tbody>
-  </table>
-        </div>
-    </section>
-
-
-    <!-- <section id="services">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">At Your Service</h2>
-                    <hr class="primary">
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
-                        <h3>Sturdy Templates</h3>
-                        <p class="text-muted">Our templates are updated regularly so they don't break.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
-                        <h3>Ready to Ship</h3>
-                        <p class="text-muted">You can use this theme as is, or you can make changes!</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
-                        <h3>Up to Date</h3>
-                        <p class="text-muted">We update dependencies to keep things fresh.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
-                        <h3>Made with Love</h3>
-                        <p class="text-muted">You have to make your websites with love these days!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
- -->
 
 </body>
 
