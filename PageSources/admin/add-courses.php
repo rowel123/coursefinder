@@ -17,46 +17,53 @@
   <label style="float:left;">School:</label>
     <div class="form-group">
   <label for="sel1">Select list:</label>
+ 
   <select class="form-control" name="school_id" id="sel1">
-    <option>1</option>
-    <option>2</option>
-    <option>3</option>
-    <option>4</option>
+  <?php
+  $con=mysqli_connect("localhost","root","","coursefinderdb");
+
+
+$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
+while($row = mysqli_fetch_array($fetchSchools)) {
+   
+   echo "<option value='" . $row['school_id'] . "'>" . $row['schoolName'] . "</option>";
+
+    } ?> 
   </select>
     </div>
     
 
 </div>
 <div class="form-group">
-  <label for="pwd" style="float:left;">Name:</label>
-  <input type="text" name="address" class="form-control" id="pwd">
+  <label for="pwd" style="float:left;">Course:</label>
+  <input type="text" name="name" class="form-control" id="pwd">
 </div> 
 <div class="form-group">
   <label for="phne" style="float:left;">Alias:</label>
-  <input type="text" name="phone" class="form-control" id="phne">
+  <input type="text" name="alias" class="form-control" id="phne">
 </div> 
 <div class="form-group">
   <label for="det" style="float:left;">Priority:</label>
       <select class="form-control" name="priority" id="sel1">
-      <option>Top</option>
-      <option>Normal</option>
-      </select>
+      <option value="1">Top</option>
+      <option value="2">Normal</option>
+    </select>
 
 </div>
-  <button type="submit" class="btn btn-default" name="addSchool">Add Course</button>
+  <button type="submit" class="btn btn-default" name="addCourse">Add Course</button>
 </form>
 
 
   <?php
     $con=mysqli_connect("localhost","root","","coursefinderdb");
 
-     if(isset($_POST['addSchool'])){
+     if(isset($_POST['addCourse'])){
    $name = $_POST['name'];
-   $address = $_POST['address'];
-   $phone = $_POST['phone']; 
-   $details = $_POST['details'];
+   $alias = $_POST['alias'];
+   $priority = $_POST['priority']; 
+   $schoolID = $_POST['school_id'];
 $sql = "INSERT INTO tbl_courses (school_id,name,name_alias,priority)
-VALUES (1,'$address','$phone',1)";
+VALUES ($schoolID,'$name','alias',$priority)";
 
    if (mysqli_query($con, $sql)) {
     echo "New record created successfully";
