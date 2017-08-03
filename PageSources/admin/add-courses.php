@@ -10,26 +10,40 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">Course Finder</h1>
                 <hr>
-                <p>Searching for your studies made easier!</p>
+                <p>Add course:</p>
     
 <form action="" method="POST">
 <div class="form-group">
-  <label style="float:left;">Name:</label>
-  <input type="text" name="name" class="form-control" id="usr">
+  <label style="float:left;">School:</label>
+    <div class="form-group">
+  <label for="sel1">Select list:</label>
+  <select class="form-control" name="school_id" id="sel1">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+    </div>
+    
+
 </div>
 <div class="form-group">
-  <label for="pwd" style="float:left;">Address:</label>
+  <label for="pwd" style="float:left;">Name:</label>
   <input type="text" name="address" class="form-control" id="pwd">
 </div> 
 <div class="form-group">
-  <label for="phne" style="float:left;">Phone:</label>
+  <label for="phne" style="float:left;">Alias:</label>
   <input type="text" name="phone" class="form-control" id="phne">
 </div> 
 <div class="form-group">
-  <label for="det" style="float:left;">Details:</label>
-  <input type="text" name="details" class="form-control" id="det">
+  <label for="det" style="float:left;">Priority:</label>
+      <select class="form-control" name="priority" id="sel1">
+      <option>Top</option>
+      <option>Normal</option>
+      </select>
+
 </div>
-  <button type="submit" class="btn btn-default" name="addSchool">Add School</button>
+  <button type="submit" class="btn btn-default" name="addSchool">Add Course</button>
 </form>
 
 
@@ -58,7 +72,7 @@ VALUES (1,'$address','$phone',1)";
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+<!--     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -71,7 +85,7 @@ VALUES (1,'$address','$phone',1)";
         </div>
     </section>
 
-    
+     -->
 
 
     <!-- jQuery -->

@@ -52,9 +52,9 @@ $con=mysqli_connect("localhost","root","","coursefinderdb");
 // Perform queries 
 $fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
 while($row = mysqli_fetch_array($fetchSchools)) {
-
+ 
        echo "<tr>
-                <td> " . $row['name'] . "</td>
+                <td> " . $row['schoolName'] . "</td>
                 <td> " . $row['address'] . "</td>
                 <td> " . $row['phone'] . "</td>             
               </tr>";

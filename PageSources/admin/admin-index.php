@@ -10,7 +10,7 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">Course Finder</h1>
                 <hr>
-                <p>Searching for your studies made easier!</p>
+                <p>Add School:</p>
     
 <form action="" method="POST">
 <div class="form-group">
@@ -58,7 +58,7 @@ VALUES ('$name','$address','$phone','$details')";
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+<!--     <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -70,7 +70,7 @@ VALUES ('$name','$address','$phone','$details')";
             </div>
         </div>
     </section>
-
+ -->
     
 
 
