@@ -38,26 +38,16 @@ background-color:rgba(0, 0, 0, 0.2);
      </style>
         <div class="header-content" style="top:250px;">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Schools</h1>
+                <h1 id="homeHeading">Assessment</h1>
                 <hr>
-                <p>We deliver the best choices for you!</p>
+                <p>Please answer the following: </p>
     
-<!––  Search START  --!>
-<label for="basic-url">Search Schools</label>
-<div class="input-group" >
-  <span class="input-group-addon" id="basic-addon3">Schools:</span>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div class="searchText">
- <div  style="width:100%;">
-
-<!––  Search END  --!>
 
             <?php
 $con=mysqli_connect("localhost","root","","coursefinderdb");
 
 
-$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
+$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_question");
 while($row = mysqli_fetch_array($fetchSchools)) {
        
     
@@ -65,29 +55,26 @@ while($row = mysqli_fetch_array($fetchSchools)) {
 
 
 
+	
+      <div> <?php echo $row['content'] ?>  <br>
 
-      <div class="col-md-2 schoolBox"> <?php echo $row['name'] ?>  <br>
-       <div class="input-group-btn">
-                <button type="button" 
-                        class="awesomeButton" 
-                        data-toggle="dropdown">Courses  Available<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                 <?php $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses where school_id=$row[school_id]"); 
-                        while($row2 = mysqli_fetch_array($fetchCourses)) {
-                     ?>
-                    <li><a href="#"> <?php echo $row2['name'] . " " . $row2['name_alias']; ?> </a></li>
+    
+       <?php echo "<a href='result.php?answer=" . $row['choiceA'] . "'> " .  $row['choiceA'] . "</a> <a href='result.php?answer=" . $row['choiceB'] . "'> " . $row['choiceB']  . 
+	   "</a> <a href='result.php?answer=" . $row['choiceC'] . "'> " . $row['choiceC']
+ . "</a> <a href='result.php?answer=" . $row['choiceD'] . "'> " . $row['choiceD']; 				   
+ 
+ ?> 
                 
      
                     <?php  } ?>
-                </ul>
-            </div>
+  
      </div>     
 
 
 
 
 <?php    
-       }
+       
 mysqli_close($con);
 ?>
         </div>

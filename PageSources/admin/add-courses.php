@@ -26,7 +26,7 @@
 $fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
 while($row = mysqli_fetch_array($fetchSchools)) {
    
-   echo "<option value='" . $row['school_id'] . "'>" . $row['schoolName'] . "</option>";
+   echo "<option value='" . $row['school_id'] . "'>" . $row['name'] . "</option>";
 
     } ?> 
   </select>

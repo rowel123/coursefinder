@@ -71,6 +71,9 @@
                     <li>
                         <a class="page-scroll" href="PageSources/courses-component/courses.php">Courses</a>
                     </li>
+					 <li>
+                        <a class="page-scroll" href="PageSources/assessment-component/assessment.php">Assessment</a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="#contact">Contact Us</a>
                     </li>

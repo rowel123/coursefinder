@@ -71,6 +71,9 @@
                     <li>
                         <a class="page-scroll" href="../courses-component/courses.php">Courses</a>
                     </li>
+					<li>
+                        <a class="page-scroll" href="../assessment-component/assessment.php">Assessment</a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="../../index.php#contact">Contact Us</a>
                     </li>
@@ -79,4 +82,5 @@
             <!-- /.navbar-collapse -->
         </div>
         <!-- /.container-fluid -->
+
     </nav>
