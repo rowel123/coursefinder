@@ -13,31 +13,8 @@
                 <p>Searching for your studies made easier!</p>
     
 <!––  DROP DOWN START  --!>
-<h3 style="text-align:left;"> Select Degree:  </h3>
-<a class="btn btn-primary btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="" value="" />
-    <span class="btn-select-value">Select an Item</span>
-    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
-    <ul>
-        <li>Associate's</li>
-        <li class="selected">Bachelor's</li>
-        <li> Master's </li>
-        <li>Doctorate</li>
-        <li>Graduate Certificates</li>
-    </ul>
-</a> <br>
-<h3 style="text-align:left;"> Select Category:  </h3>
-<a class="btn btn-primary btn-select btn-select-light">
-    <input type="hidden" class="btn-select-input" id="" name="" value="" />
-    <span class="btn-select-value">Select an Item</span>
-    <span class='btn-select-arrow glyphicon glyphicon-chevron-down'></span>
-    <ul>
-        <li>Computer Science</li>
-        <li class="selected">Information Technology</li>
-        <li>Computer Engineer</li>
-        <li>Communication's Engineer</li>
-    </ul>
-</a>
+
+
 <!––  DROP DOWN END  --!>
 
 

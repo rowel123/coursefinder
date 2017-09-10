@@ -66,7 +66,7 @@ while($row = mysqli_fetch_array($fetchSchools)) {
 
 
 
-      <div class="col-md-2 schoolBox"> <?php echo $row['name'] ?>  <br>
+      <div class="col-md-2 schoolBox"> <?php echo $row['school_name'] ?>  <br>
        <div class="input-group-btn">
                 <button type="button" 
                         class="awesomeButton" 

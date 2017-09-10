@@ -6,6 +6,11 @@
 <body id="page-top">
 
     <header>
+<style type="text/css">
+  th{
+    text-align: center;
+  }
+</style>
         <div class="header-content" style="top:250px;">
             <div class="header-content-inner">
                 <h1 id="homeHeading">Courses</h1>
@@ -13,13 +18,51 @@
                 <p>Learning is everything!</p>
     
 
-<label for="basic-url">Available Courses</label>
+<label for="basic-url">Available Schools</label>
 
-<div><a href="courses_details.php?course=BSCS"> Bachelor Science in Computer Science </a> </div>
-<div><a href="courses_details.php?course=BSIT"> Bachelor Science in Information Technology </a> </div>
-<div><a href="courses_details.php?course=BSBA"> Bachelor Science in Business Administration  </a></div>
-<div><a href="courses_details.php?course=BSCE"> Bachelor Science in Civil Engineering </a> </div>
-<div><a href="courses_details.php?course=BSCOE"> Bachelor Science in Computer Engineering </a> </div>
+     <?php
+$con=mysqli_connect("localhost","root","","coursefinderdb");
+
+$name_alias = $_GET['course'];
+       
+    
+  ?>
+  
+
+
+
+
+      <div class=""> <?php echo $name_alias ?>  <br>
+     
+        
+            <table width="100%" class="table">
+             <th> School </th>
+             <th> Address</th>
+             <th> Contact No. </th>
+                 <?php $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses inner join tbl_schools on 
+                 tbl_courses.school_id=tbl_schools.school_id where name_alias='$name_alias'"); 
+                        while($row2 = mysqli_fetch_array($fetchCourses)) {
+                     ?>
+                     <tr> 
+                      <td><a href="school-assesment.php">  <?php echo $row2['school_name']; ?> </a> </td>
+                      <td>  <?php echo $row2['address']; ?>  </td>
+                      <td>  <?php echo $row2['phone']; ?> </td>
+                      </tr>
+                    
+                
+     
+                    <?php  } ?>
+          
+            </table>
+     </div>     
+
+
+
+
+<?php    
+       
+mysqli_close($con);
+?>
 
             </div>
         </div>

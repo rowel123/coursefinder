@@ -43,6 +43,11 @@
     <!-- Theme JavaScript -->
      <script src="../../js/dropdownSelect.js"></script>
     <script src="../../js/creative.min.js"></script>
+<style>
+a{
+    color:#00DD00;
+}    
+</style>
 
 </head>
 

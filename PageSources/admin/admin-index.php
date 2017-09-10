@@ -41,7 +41,7 @@
    $address = $_POST['address'];
    $phone = $_POST['phone']; 
    $details = $_POST['details'];
-$sql = "INSERT INTO tbl_schools (schoolName,address,phone,details)
+$sql = "INSERT INTO tbl_schools (school_name,address,phone,details)
 VALUES ('$name','$address','$phone','$details')";
 
    if (mysqli_query($con, $sql)) {

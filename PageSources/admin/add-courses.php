@@ -26,7 +26,7 @@
 $fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
 while($row = mysqli_fetch_array($fetchSchools)) {
    
-   echo "<option value='" . $row['school_id'] . "'>" . $row['name'] . "</option>";
+   echo "<option value='" . $row['school_id'] . "'>" . $row['school_name'] . "</option>";
 
     } ?> 
   </select>
@@ -63,7 +63,7 @@ while($row = mysqli_fetch_array($fetchSchools)) {
    $priority = $_POST['priority']; 
    $schoolID = $_POST['school_id'];
 $sql = "INSERT INTO tbl_courses (school_id,name,name_alias,priority)
-VALUES ($schoolID,'$name','alias',$priority)";
+VALUES ($schoolID,'$name','$alias',$priority)";
 
    if (mysqli_query($con, $sql)) {
     echo "New record created successfully";
