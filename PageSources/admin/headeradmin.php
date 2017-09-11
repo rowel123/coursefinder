@@ -69,7 +69,7 @@
                         <a class="page-scroll" href="../school-component/school.php">Update School Courses</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="../../index.php#contact">logout</a>
+                        <a class="page-scroll" href="logout.php">logout</a>
                     </li>
                 </ul>
             </div>
@@ -77,3 +77,11 @@
         </div>
         <!-- /.container-fluid -->
     </nav>
+<?php
+session_start();
+
+if($_SESSION['logged']!=1){
+    header("Location: admin-login.php");
+}
+
+?>
