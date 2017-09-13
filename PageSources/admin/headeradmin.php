@@ -65,6 +65,9 @@
                     <li>
                         <a class="page-scroll" href="add-courses.php">Add Courses</a>
                     </li>
+                     <li>
+                        <a class="page-scroll" href="admin-assessment.php">Add Assesment</a>
+                    </li>
                     <li>
                         <a class="page-scroll" href="logout.php">logout</a>
                     </li>
