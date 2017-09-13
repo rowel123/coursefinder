@@ -2,6 +2,21 @@
 <html lang="en">
 
     <?php include('headeradmin.php'); ?>
+    <style type="text/css">
+    
+    @media (min-width: 768px){
+header .header-content {
+    top: 67%;
+}
+header {
+    min-height: 100%;
+    overflow: auto;
+}
+}
+
+
+
+</style>
 <body id="page-top">
 
     <header>

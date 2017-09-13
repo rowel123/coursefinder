@@ -36,7 +36,7 @@ background-color:rgba(0, 0, 0, 0.2);
   text-decoration: none;
         }
      </style>
-        <div class="header-content" style="top:250px;">
+        <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">Assessment</h1>
                 <hr>

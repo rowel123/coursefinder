@@ -7,6 +7,7 @@
 
     <header>
      <style type="text/css">
+      
         .schoolBox{
 
             height: 100px;
@@ -35,8 +36,14 @@ background-color:rgba(0, 0, 0, .03);
 background-color:rgba(0, 0, 0, 0.2);
   text-decoration: none;
         }
+@media (min-width: 991px){
+header .header-content {
+    position: absolute;
+    top: 40%
+}
+}
      </style>
-        <div class="header-content" style="top:250px;">
+        <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">Schools</h1>
                 <hr>
@@ -49,7 +56,7 @@ background-color:rgba(0, 0, 0, 0.2);
   <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
 </div>
 </div class="searchText">
- <div  style="width:100%;">
+ <div  class="row" style="width:100%;">
 
 <!––  Search END  --!>
 
@@ -66,7 +73,8 @@ while($row = mysqli_fetch_array($fetchSchools)) {
 
 
 
-      <div class="col-md-2 schoolBox"> <?php echo $row['school_name'] ?>  <br>
+      <div class="col-md-3">
+      <div class="schoolBox"> <?php echo $row['school_name'] ?>  <br>
        <div class="input-group-btn">
                 <button type="button" 
                         class="awesomeButton" 
@@ -81,6 +89,7 @@ while($row = mysqli_fetch_array($fetchSchools)) {
                     <?php  } ?>
                 </ul>
             </div>
+        </div>
      </div>     
 
 

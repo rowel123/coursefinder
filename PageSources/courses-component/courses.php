@@ -6,7 +6,7 @@
 <body id="page-top">
 
     <header>
-        <div class="header-content" style="top:250px;">
+        <div class="header-content">
             <div class="header-content-inner">
                 <h1 id="homeHeading">Courses</h1>
                 <hr>

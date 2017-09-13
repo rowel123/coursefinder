@@ -206,3 +206,11 @@
     position: fixed;
     bottom: 0px;
 }
+
+
+
+@media (max-width: 768px){
+header .header-content {
+    min-height: 100vh !important;
+}
+}
