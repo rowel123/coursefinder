@@ -53,20 +53,17 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Zambales Course Finder</a>
+                <a class="navbar-brand page-scroll" href="../../index.php">Zambales Course Finder</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a class="page-scroll" href="../../index.php">Add School</a>
+                        <a class="page-scroll" href="admin-index.php">Add School</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="add-courses.php">Add Courses</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="../school-component/school.php">Update School Courses</a>
                     </li>
                     <li>
                         <a class="page-scroll" href="logout.php">logout</a>
@@ -81,6 +78,8 @@
 session_start();
 
 if($_SESSION['logged']!=1){
+    echo "<script> alert('Please log in first') </script>";
+ 
     header("Location: admin-login.php");
 }
 
