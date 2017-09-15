@@ -38,20 +38,53 @@ background-color:rgba(0, 0, 0, 0.2);
      </style>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Assessment</h1>
-                <hr>
-                <p>Please answer the following: </p>
+  
     
 
             <?php
 $con=mysqli_connect("localhost","root","","coursefinderdb");
+  $max = max($_SESSION['SCIENCE'][0], $_SESSION['ENTREPRENUERSHIP'][0], $_SESSION['CLERICAL'][0], 
+    $_SESSION['Verbal'][0], $_SESSION['Math'][0]);
 
+$c1 =$_SESSION['SCIENCE'][0];
+$c2= $_SESSION['ENTREPRENUERSHIP'][0];
+$c3 =  $_SESSION['CLERICAL'][0];
+$c4 = $_SESSION['Verbal'][0];
+$c5 = $_SESSION['MATH'][0];
   ?>
 
 
 
 	
-      <div> <?php echo $_GET['answer']; ?>  <br>
+      <div> <?php  
+      $some = array(intval($c1),intval($c2),intval($c3),intval($c4),intval($c5));
+      $maxs = array_search(max($some),$some);    
+
+
+            if($maxs==0){
+              $cat ="SCIENCE";
+            }else if($maxs==1){
+            $cat ="ENTREPRENUERSHIP";
+            }else if($maxs==2){
+            $cat= "CLERICAL";  
+            }else if($maxs==3){
+            $cat = "VERBAL";  
+            }else if($maxs==4){
+              $cat = "MATH";
+            }  
+         
+          $fetchArray= mysqli_query($con,"SELECT * FROM tbl_category
+             where category_name='$cat'");
+
+  echo '              <h3 id="homeHeading">You are great in </h3><h1>' . $cat .'</h1>
+                <hr>
+                <p>BEST COURSES FOR YOU: </p>';
+
+    while($row = mysqli_fetch_array($fetchArray)) {
+          echo "<h3>" . $row['subjects'] . "</h3>";
+ 
+      }
+          ?>  <br>
 
    
   
