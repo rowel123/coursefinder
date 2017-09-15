@@ -47,7 +47,7 @@ background-color:rgba(0, 0, 0, 0.2);
 
 $_SESSION['SCIENCE']=array(0,'SCIENCE');
 $_SESSION['MATH']=array(0,'Math');;
-$_SESSION['Verbal']=array(0,'Verbal');;
+$_SESSION['VERBAL']=array(0,'Verbal');;
 $_SESSION['ENTREPRENUERSHIP']=array(0,'ENTREPRENUERSHIP');;
 $_SESSION['CLERICAL']=array(0,'CLERICAL');;
 
@@ -56,7 +56,7 @@ $con=mysqli_connect("localhost","root","","coursefinderdb");
 if(isset($_POST['submit'])){
     $fetchArray= mysqli_query($con,"SELECT * FROM tbl_question inner join tbl_category on 
       tbl_question.category_id=tbl_category.category_id");
-    $counter = 2;
+    $counter = 1;
 
     while($row = mysqli_fetch_array($fetchArray)) {
 
