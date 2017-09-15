@@ -87,7 +87,7 @@ while($row = mysqli_fetch_array($fetchSchools)) {
       <div> <?php echo $row['content'] ?>  <br>
   <div>
     <input type="radio" id="genderChoice1"
-     name=<?php echo "'" . $row['question_id'] . "'"; ?> value=<?php echo "'" . $row['choiceA'] . "'"; ?> >
+     name=<?php echo "'" . $row['question_id'] . "'"; ?> value=<?php echo "'" . $row['choiceA'] . "'"; ?> required>
     <label for="genderChoice1"><?php echo $row['choiceA'];?></label>
 
    <input type="radio" id="genderChoice1"

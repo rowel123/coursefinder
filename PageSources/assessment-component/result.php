@@ -44,7 +44,7 @@ background-color:rgba(0, 0, 0, 0.2);
             <?php
 $con=mysqli_connect("localhost","root","","coursefinderdb");
   $max = max($_SESSION['SCIENCE'][0], $_SESSION['ENTREPRENUERSHIP'][0], $_SESSION['CLERICAL'][0], 
-    $_SESSION['Verbal'][0], $_SESSION['Math'][0]);
+    $_SESSION['Verbal'][0], $_SESSION['MATH'][0]);
 
 $c1 =$_SESSION['SCIENCE'][0];
 $c2= $_SESSION['ENTREPRENUERSHIP'][0];
