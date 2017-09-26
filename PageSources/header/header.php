@@ -1,6 +1,44 @@
 <head>
     <?php
 session_start();
+
+$con=mysqli_connect("localhost","root","","coursefinderdb");
+  
+     if(isset($_POST['login'])){
+        $username = $_POST['username'];
+         $password = $_POST['password'];
+         $sql = mysqli_query($con,"SELECT * FROM tbl_user where username='$username' AND password='$password'");
+
+          if(mysqli_num_rows($sql)>0) {
+                 while($row=mysqli_fetch_array($sql)){
+                       $_SESSION['school_id']=$row['school_id'];
+                       $_SESSION['school_name'] = $row['school_name'];
+                 }
+              $_SESSION['logged']=1;
+               header("Location: admin-index.php");
+                }else{
+                 $_SESSION['logged']=0;   
+                  echo "<script> alert('Invalid School Account') </script>";
+                } 
+    }
+
+         if(isset($_POST['schoollogin'])){
+        $username = $_POST['username'];
+         $password = $_POST['password'];
+         $sql = mysqli_query($con,"SELECT * FROM tbl_schools where username='$username' AND password='$password'");
+
+          if(mysqli_num_rows($sql)>0) {
+                 while($row=mysqli_fetch_array($sql)){
+                       $_SESSION['school_id']=$row['school_id'];
+                       $_SESSION['school_name'] = $row['school_name'];
+                 }
+              $_SESSION['logged']=2;
+               header("Location: school-index.php");
+                }else{
+                 $_SESSION['logged']=0;   
+                  echo "<script> alert('Invalid School Account') </script>";
+                } 
+    }
      ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -83,6 +121,9 @@ a{
                     </li>
                     <li>
                         <a class="page-scroll" href="../../index.php#contact">Contact Us</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="../school-component/school-sign-in.php">Sign In</a>
                     </li>
                 </ul>
             </div>

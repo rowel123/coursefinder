@@ -14,26 +14,10 @@
     
 <form action="" method="POST">
 <div class="form-group">
-  <label style="float:left;">School:</label>
-    <div class="form-group">
-  <label for="sel1">Select list:</label>
- 
-  <select class="form-control" name="school_id" id="sel1">
-  <?php
-  $con=mysqli_connect("localhost","root","","coursefinderdb");
-
-
-$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
-while($row = mysqli_fetch_array($fetchSchools)) {
-   
-   echo "<option value='" . $row['school_id'] . "'>" . $row['school_name'] . "</option>";
-
-    } ?> 
-  </select>
-    </div>
-    
+  <label style="float:left;"><?php echo $_SESSION['school_name']; ?></label>
 
 </div>
+
 <div class="form-group">
   <label for="pwd" style="float:left;">Course:</label>
   <input type="text" name="name" class="form-control" id="pwd">
@@ -61,7 +45,7 @@ while($row = mysqli_fetch_array($fetchSchools)) {
    $name = $_POST['name'];
    $alias = $_POST['alias'];
    $priority = $_POST['priority']; 
-   $schoolID = $_POST['school_id'];
+   $schoolID = $_SESSION['school_id'];
 $sql = "INSERT INTO tbl_courses (school_id,name,name_alias,priority)
 VALUES ($schoolID,'$name','$alias',$priority)";
 

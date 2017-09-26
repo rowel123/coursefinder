@@ -10,12 +10,20 @@
             <div class="header-content-inner">
                 <h1 id="homeHeading">Course Finder</h1>
                 <hr>
-                <p>Add School:</p>
+                <p>Register School:</p>
     
 <form action="" method="POST">
 <div class="form-group">
   <label style="float:left;">Name:</label>
   <input type="text" name="name" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label style="float:left;">Username:</label>
+  <input type="text" name="username" class="form-control" id="usr">
+</div>
+<div class="form-group">
+  <label style="float:left;">Password:</label>
+  <input type="password" name="password" class="form-control" id="usr">
 </div>
 <div class="form-group">
   <label for="pwd" style="float:left;">Address:</label>
@@ -41,8 +49,10 @@
    $address = $_POST['address'];
    $phone = $_POST['phone']; 
    $details = $_POST['details'];
-$sql = "INSERT INTO tbl_schools (school_name,address,phone,details)
-VALUES ('$name','$address','$phone','$details')";
+   $username = $_POST['username'];
+   $password = $_POST['password'];
+$sql = "INSERT INTO tbl_schools (username,password,school_name,address,phone,details)
+VALUES ('$username','$password','$name','$address','$phone','$details')";
 
    if (mysqli_query($con, $sql)) {
     echo "New record created successfully";
