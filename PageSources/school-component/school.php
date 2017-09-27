@@ -83,8 +83,7 @@ header .header-content {
                  <?php
                 if(!isset($_GET['name'])){
 
-                                $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses inner join tbl_schools on 
-                 tbl_courses.school_id=tbl_schools.school_id"); 
+                                $fetchCourses = mysqli_query($con,"SELECT * FROM  tbl_schools"); 
                         while($row2 = mysqli_fetch_array($fetchCourses)) {
                      ?>
                      <tr> 
@@ -98,8 +97,7 @@ header .header-content {
                     <?php  
                   } 
                       }else{
-                        $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses inner join tbl_schools on 
-                 tbl_courses.school_id=tbl_schools.school_id where school_name like '%$_GET[name]%'"); 
+                        $fetchCourses = mysqli_query($con,"SELECT * FROM  tbl_schools where school_name like '%$_GET[name]%'"); 
                         while($row2 = mysqli_fetch_array($fetchCourses)) {
                      ?>
                      <tr> 
