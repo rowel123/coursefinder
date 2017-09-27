@@ -39,6 +39,10 @@ $con=mysqli_connect("localhost","root","","coursefinderdb");
                   echo "<script> alert('Invalid School Account') </script>";
                 } 
     }
+
+      if(isset($_POST['search'])){
+    header("location: school.php?name=" . $_POST['searchtext']);
+  }
      ?>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -85,8 +89,12 @@ $con=mysqli_connect("localhost","root","","coursefinderdb");
     <script src="../../js/creative.min.js"></script>
 <style>
 a{
-    color:#00DD00;
+    font-size: 24px;
+    color:#FFFFFF;
 }    
+body{
+    font-size: 18px;
+}
 </style>
 
 </head>

@@ -2,7 +2,11 @@
 <html lang="en">
 
     <?php include('../header/header.php'); ?>
+            <?php
+$con=mysqli_connect("localhost","root","","coursefinderdb");
 
+
+  ?>
 <body id="page-top">
 
     <header>
@@ -42,6 +46,9 @@ header .header-content {
     top: 40%
 }
 }
+  th{
+    text-align: center;
+  }
      </style>
         <div class="header-content">
             <div class="header-content-inner">
@@ -50,58 +57,66 @@ header .header-content {
                 <p>We deliver the best choices for you!</p>
     
 <!––  Search START  --!>
-<label for="basic-url">Search Schools</label>
-<div class="input-group" >
-  <span class="input-group-addon" id="basic-addon3">Schools:</span>
-  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-</div>
-</div class="searchText">
+
+
  <div  class="row" style="width:100%;">
 
 <!––  Search END  --!>
 
-            <?php
-$con=mysqli_connect("localhost","root","","coursefinderdb");
-
-
-$fetchSchools = mysqli_query($con,"SELECT * FROM tbl_schools");
-while($row = mysqli_fetch_array($fetchSchools)) {
-       
-    
-  ?>
 
 
 
+  <div class="input-group" style="width: 100%">
+  <form action="" method="POST">
+    <input id="msg" type="text" class="form-control" name="searchtext" placeholder="Search schools" style="width: 80%">
+         <button type="submit" class="btn btn-success" name="search" >Search</button>
+<a href="school.php"> Show All</a>
+   </form> 
+  </div>
 
-      <div class="col-md-3">
-      <div class="schoolBox"> <?php echo $row['school_name'] ?>  <br>
-       <div class="input-group-btn">
-                <button type="button" 
-                        class="awesomeButton" 
-                        data-toggle="dropdown">Courses  Available<span class="caret"></span></button>
-                <ul class="dropdown-menu">
-                 <?php $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses where school_id=$row[school_id]"); 
+            <table width="100%" class="table">
+            <tr>
+             <th> School </th>
+             <th> Address</th>
+             <th> Contact No. </th>
+            </tr>
+                 <?php
+                if(!isset($_GET['name'])){
+
+                                $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses inner join tbl_schools on 
+                 tbl_courses.school_id=tbl_schools.school_id"); 
                         while($row2 = mysqli_fetch_array($fetchCourses)) {
                      ?>
-                    <li><a href="#"> <?php echo $row2['name'] . " " . $row2['name_alias']; ?> </a></li>
+                     <tr> 
+                      <td><a href=<?php echo "tschool.php?id=" . $row2['school_id'] . "&name=" . $row2['school_name'] ?>>  <?php echo $row2['school_name']; ?> </a> </td>
+                      <td>  <?php echo $row2['address']; ?>  </td>
+                      <td>  <?php echo $row2['phone']; ?> </td>
+                      </tr>
+                    
                 
      
-                    <?php  } ?>
-                </ul>
-            </div>
+                    <?php  
+                  } 
+                      }else{
+                        $fetchCourses = mysqli_query($con,"SELECT * FROM tbl_courses inner join tbl_schools on 
+                 tbl_courses.school_id=tbl_schools.school_id where school_name like '%$_GET[name]%'"); 
+                        while($row2 = mysqli_fetch_array($fetchCourses)) {
+                     ?>
+                     <tr> 
+                      <td><a href=<?php echo "tschool.php?id=" . $row2['school_id'] . "&name=" . $row2['school_name'] ?>>    <?php echo $row2['school_name']; ?> </a> </td>
+                      <td>  <?php echo $row2['address']; ?>  </td>
+                      <td>  <?php echo $row2['phone']; ?> </td>
+                      </tr>
+
+                    <?php  
+                      }}
+                    ?>
+          
+            </table>
+
         </div>
-     </div>     
-
-
-
-
-<?php    
-       }
-mysqli_close($con);
-?>
         </div>
-        </div>
-
+</div>
 
     </header>
 

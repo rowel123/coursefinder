@@ -8,55 +8,49 @@
     <title> Zambales Course Finder</title>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 id="homeHeading">Course Finder</h1>
+                <h1 id="homeHeading">Admin</h1>
                 <hr>
-                <p>Add course:</p>
-    
+                <p>Edit School:</p>
+  <?php
+     $sql = mysqli_query($con,"SELECT * FROM tbl_schools where school_id='$_GET[id]'");
+     while($row=mysqli_fetch_array($sql)){
+   ?>                 
 <form action="" method="POST">
 <div class="form-group">
-  <label style="float:left;"> </label>
-
-</div>
-
-<div class="form-group">
-  <label for="pwd" style="float:left;">Course:</label>
-  <input type="text" name="name" class="form-control" id="pwd">
+  <label for="pwd" style="float:left;">Username:</label>
+  <input type="text" name="username" class="form-control" id="pwd" value="<?php echo $row['username']; ?>">
 </div> 
 <div class="form-group">
-  <label for="phne" style="float:left;">Alias:</label>
-  <input type="text" name="alias" class="form-control" id="phne">
+  <label for="pwd" style="float:left;">Password:</label>
+  <input type="text" name="password" class="form-control" id="pwd" value="<?php echo $row['password']; ?>">
 </div> 
 <div class="form-group">
-  <label for="det" style="float:left;">Priority:</label>
-      <select class="form-control" name="priority" id="sel1">
-      <option value="1">Top</option>
-      <option value="2">Normal</option>
-    </select>
+  <label for="pwd" style="float:left;">Name:</label>
+  <input type="text" name="name" class="form-control" id="pwd" value="<?php echo $row['school_name']; ?>">
+</div> 
+<div class="form-group">
+  <label for="phne" style="float:left;">Address:</label>
+  <input type="text" name="address" class="form-control" id="phne"  value="<?php echo $row['address']; ?>">
+</div> 
+<div class="form-group">
+  <label for="phne" style="float:left;">Number:</label>
+  <input type="number" name="contact_number" class="form-control" id="phne"  value="<?php echo $row['phone']; ?>">
+</div> 
+<div class="form-group">
+  <label for="phne" style="float:left;">Details:</label>
+  <input type="text" name="details" class="form-control" id="phne"  value="<?php echo $row['details']; ?>">
+</div> 
 
-</div>
-  <button type="submit" class="btn btn-default" name="addCourse">Add Course</button>
+  <button type="submit" class="btn btn-default" name="addSchoolDetails">Update Information</button>
 </form>
 
 
-  <?php
-    $con=mysqli_connect("localhost","root","","coursefinderdb");
-
-     if(isset($_POST['addCourse'])){
-   $name = $_POST['name'];
-   $alias = $_POST['alias'];
-   $priority = $_POST['priority']; 
-   $schoolID = $_SESSION['school_id'];
-$sql = "INSERT INTO tbl_courses (school_id,name,name_alias,priority)
-VALUES ($schoolID,'$name','$alias',$priority)";
-
-   if (mysqli_query($con, $sql)) {
-    echo "New record created successfully";
-} else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($con);
+<?php
 }
-}
+ ?>
 
-  ?>
+
+
 
 
             </div>

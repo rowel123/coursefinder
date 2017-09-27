@@ -63,7 +63,7 @@
                         <a class="page-scroll" href="admin-index.php">Add School</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="add-courses.php">Add Courses</a>
+                        <a class="page-scroll" href="edit-schools.php">Edit Schools</a>
                     </li>
                      <li>
                         <a class="page-scroll" href="admin-assessment.php">Add Assesment</a>
@@ -79,11 +79,38 @@
     </nav>
 <?php
 session_start();
-
+$con=mysqli_connect("localhost","root","","coursefinderdb");
 if($_SESSION['logged']!=1){
-    echo "<script> alert('Please log in first') </script>";
- 
     header("Location: admin-login.php");
+}  
+if(isset($_POST['addSchoolDetails'])){
+    $username =  $_POST['username'];
+    $password=  $_POST['password'];
+   $name = $_POST['name'];
+   $address = $_POST['address'];
+   $contact_number = $_POST['contact_number']; 
+   $details = $_POST['details'];
+$sql = "UPDATE tbl_schools set username='$username',password='$password',school_name='$name',address='$address',phone='$contact_number',details='$details'";
+
+   if (mysqli_query($con, $sql)) {
+    header("Refresh:0");
+} else {
+    echo "Error: " . $sql . "<br>" . mysqli_error($con);
+}
 }
 
+if(isset($_POST['search'])){
+    header("location: edit-schools.php?name=" . $_POST['searchtext']);
+}
+
+
 ?>
+
+<style>
+a{
+    color:#FFFFFF;
+}    
+body{
+    font-size: 18px;
+}
+</style>

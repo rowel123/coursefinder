@@ -69,6 +69,9 @@ $con=mysqli_connect("localhost","root","","coursefinderdb");
 a{
     color:#00DD00;
 }    
+body{
+    font-size: 18px;
+}
 </style>
 
 </head>

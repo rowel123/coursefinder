@@ -72,7 +72,12 @@ $c5 = $_SESSION['MATH'][0];
             }else if($maxs==4){
               $cat = "MATH";
             }  
-         
+  echo '<h3 id="homeHeading">Total Scores: </h3>';          
+  echo '<p>Science:  ' . $_SESSION['SCIENCE'][0] .       
+   '  Enterprenuership:  ' . $_SESSION['ENTREPRENUERSHIP'][0] .  
+   '  clerical:  ' . $_SESSION['CLERICAL'][0] .
+  '  verbal:  ' . $_SESSION['VERBAL'][0]  .
+ '  math:  ' . $_SESSION['MATH'][0];      
           $fetchArray= mysqli_query($con,"SELECT * FROM tbl_category
              where category_name='$cat'");
 

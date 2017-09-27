@@ -40,8 +40,34 @@ background-color:rgba(0, 0, 0, 0.2);
             <div class="header-content-inner">
                 <h1 id="homeHeading">Assessment</h1>
                 <hr>
-                <p>Please answer the following: </p>
-    
+                <p> <a href="#services"> Start answerting questions by clicking here! </a> </p>
+
+
+<?php    
+       
+mysqli_close($con);
+?>
+        </div>
+        </div>
+
+
+    </header>
+
+
+
+
+
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Please answer the following: </h2>
+                    <hr class="primary">
+                </div>
+            </div>
+        </div>
+        <div class="container">
+              
 <form action="" method="POST">
             <?php
 
@@ -83,9 +109,9 @@ while($row = mysqli_fetch_array($fetchSchools)) {
     
   ?>
 
-	
+  
       <div> <?php echo $row['content'] ?>  <br>
-  <div>
+  <div style="margin-bottom: 20px;">
     <input type="radio" id="genderChoice1"
      name=<?php echo "'" . $row['question_id'] . "'"; ?> value=<?php echo "'" . $row['choiceA'] . "'"; ?> required>
     <label for="genderChoice1"><?php echo $row['choiceA'];?></label>
@@ -112,25 +138,13 @@ while($row = mysqli_fetch_array($fetchSchools)) {
      
                     <?php  } ?>
     <div>
-     <button type="submit" class="btn btn-default" name="submit">Submit</button>
+     <button type="submit" class="btn btn-success" name="submit" >Submit</button>
   </div>
      </div>    
       </form>
 
-
-
-
-<?php    
-       
-mysqli_close($con);
-?>
         </div>
-        </div>
-
-
-    </header>
-
-
+    </section>
 
 
 </body>
