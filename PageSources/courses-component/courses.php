@@ -15,12 +15,23 @@
 
 <label for="basic-url">Available Courses</label>
 
-<div><a href="courses_details.php?course=BSCS"> Bachelor Science in Computer Science </a> </div>
-<div><a href="courses_details.php?course=BSIT"> Bachelor Science in Information Technology </a> </div>
-<div><a href="courses_details.php?course=BSBA"> Bachelor Science in Business Administration  </a></div>
-<div><a href="courses_details.php?course=BSCE"> Bachelor Science in Civil Engineering </a> </div>
-<div><a href="courses_details.php?course=BSCOE"> Bachelor Science in Computer Engineering </a> </div>
+   <table width="100%" class="table">
+             <th> Course </th>
+             <th> Alias</th>
+                 <?php $fetchCourses = mysqli_query($con,"SELECT * FROM courses"); 
+                        while($row = mysqli_fetch_array($fetchCourses)) {
+                     ?>
+                     <tr> 
+                      <td><a href="courses_details.php?course=<?php echo $row['name_alias']; ?>">  <?php echo $row['name']; ?> </a> </td>
+                      <td>  <?php echo $row['name_alias']; ?>  </td>
 
+                      </tr>
+                    
+                
+     
+                    <?php  } ?>
+          
+            </table>
             </div>
         </div>
     </header>

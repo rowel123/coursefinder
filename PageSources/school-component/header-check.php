@@ -4,7 +4,8 @@
    $address = $_POST['address'];
    $contact_number = $_POST['contact_number']; 
    $details = $_POST['details'];
-$sql = "UPDATE tbl_schools set school_name='$name',address='$address',phone='$contact_number',details='$details'";
+$sql = "UPDATE tbl_schools set school_name='$name',address='$address',phone='$contact_number',details='$details'
+ where school_id='$_SESSION[school_id]'";
 
    if (mysqli_query($con, $sql)) {
     header("Refresh:0");
