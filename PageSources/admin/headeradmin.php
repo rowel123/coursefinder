@@ -90,7 +90,8 @@ if(isset($_POST['addSchoolDetails'])){
    $address = $_POST['address'];
    $contact_number = $_POST['contact_number']; 
    $details = $_POST['details'];
-$sql = "UPDATE tbl_schools set username='$username',password='$password',school_name='$name',address='$address',phone='$contact_number',details='$details'";
+   $school_id =$_GET['id'];
+$sql = "UPDATE tbl_schools set username='$username',password='$password',school_name='$name',address='$address',phone='$contact_number',details='$details' where school_id='$_GET[id]'";
 
    if (mysqli_query($con, $sql)) {
     header("Refresh:0");
